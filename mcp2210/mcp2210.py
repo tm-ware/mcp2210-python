@@ -828,4 +828,12 @@ class Mcp2210(object):
 
         self._spi_settings.mode = mode
         self._set_spi_configuration()
-        
+
+    def set_spi_bit_rate(self, bit_rate: int):
+        """
+        Sets the SPI bitrate of the device.
+
+        :param bit_rate: the SPI bitrate, between 1.5kHz and 12MHz.
+        """
+        self._spi_settings.bit_rate = bit_rate
+        self._set_spi_configuration()
